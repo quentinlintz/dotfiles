@@ -1,27 +1,22 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZSH=~/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 source $ZSH/oh-my-zsh.sh
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
-source $ZPLUG_HOME/init.zsh
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-zplug load
 
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
+plugins=(
+  git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-[ -s "/Users/quentinlintz/.bun/_bun" ] && source "/Users/quentinlintz/.bun/_bun"
-
-export PATH="$PATH:/Users/quentinlintz/.local/bin"
+alias ls=colorls
 alias vi=nvim
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
