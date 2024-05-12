@@ -25,7 +25,10 @@ return {
       lspconfig.lua_ls.setup({})
       lspconfig.marksman.setup({})
       lspconfig.pyright.setup({})
-      lspconfig.verible.setup({})
+      lspconfig.verible.setup({
+        cmd = { "verible-verilog-ls", "--rules_config_search" },
+        single_file_support = true
+      })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.hover, {})
