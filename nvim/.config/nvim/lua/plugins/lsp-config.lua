@@ -10,6 +10,7 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
+          "gopls",
           "lua_ls",
           "marksman",
           "pyright",
@@ -22,6 +23,7 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require("lspconfig")
+      lspconfig.gopls.setup({})
       lspconfig.lua_ls.setup({})
       lspconfig.marksman.setup({})
       lspconfig.pyright.setup({})
@@ -34,6 +36,7 @@ return {
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
     end
   }
 }
