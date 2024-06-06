@@ -1,4 +1,4 @@
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. $HOME/.asdf/asdf.sh
 
 plugins=(
   git
@@ -9,7 +9,6 @@ plugins=(
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-alias ls=colorls
 alias vi=nvim
 
 eval "$(starship init zsh)"
