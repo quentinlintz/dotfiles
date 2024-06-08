@@ -23,6 +23,3 @@ style = "Italic"
 [font.normal]
 family = "MesloLGS Nerd Font"
 style = "Regular"
-
-[window]
-opacity = 0.9

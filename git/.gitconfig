@@ -3,3 +3,6 @@
 # Please adapt and uncomment the following lines:
 	name = Quentin Lintz
 	email = quentinlintz@outlook.com
+
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
