@@ -1,5 +1,5 @@
 import = [
-  "~/.config/alacritty/tokyonight.toml"
+  "~/.config/alacritty/catppuccin.toml"
 ]
 
 [env]

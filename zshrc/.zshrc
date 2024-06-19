@@ -12,4 +12,4 @@ export GOPATH=$HOME/.local/go
 alias vi=nvim
 alias ff=fastfetch
 
-eval "$(starship init zsh)"
+eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/catppuccin_macchiato.omp.json')"
