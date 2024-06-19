@@ -1,7 +1,6 @@
-. $HOME/.asdf/asdf.sh
-
 plugins=(
   git
+  asdf
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
