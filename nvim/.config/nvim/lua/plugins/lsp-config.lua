@@ -31,6 +31,11 @@ return {
 			lspconfig.marksman.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.verible.setup({
+				cmd = { "verible-verilog-ls", "--rules_config_search" },
+				filetypes = { "verilog", "systemverilog", "verilog_systemverilog" },
+				capabilities = capabilities,
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})

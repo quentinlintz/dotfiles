@@ -9,6 +9,7 @@ return {
 				null_ls.builtins.formatting.goimports_reviser,
 				null_ls.builtins.formatting.golines,
 				null_ls.builtins.formatting.stylua,
+				null_ls.builtins.formatting.verible_verilog_format,
 			},
 		})
 
