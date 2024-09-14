@@ -16,6 +16,8 @@ export GOPATH=$HOME/.local/go
 alias vi='nvim'
 alias ll='ls -latr'
 
+. /opt/asdf-vm/asdf.sh
+
 # Fuzzy find things
 source <(fzf --zsh)
 HISTFILE=~/.zsh_history
