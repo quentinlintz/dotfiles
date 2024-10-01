@@ -14,7 +14,10 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/.local/go
 
 alias vi='nvim'
+alias z='zellij'
 alias ll='ls -latr'
+alias ff='fastfetch'
+alias spotify='spt'
 
 . /opt/asdf-vm/asdf.sh
 
