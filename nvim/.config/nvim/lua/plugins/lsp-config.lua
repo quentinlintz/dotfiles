@@ -21,6 +21,7 @@ return {
 			local lspconfig = require("lspconfig")
 			lspconfig.html.setup({
 				capabilities = capabilities,
+				filetypes = { "html", "erb", "html.erb" },
 			})
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
@@ -45,7 +46,7 @@ return {
 			lspconfig.ruby_lsp.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.solargraph.setup({
+			lspconfig.eslint.setup({
 				capabilities = capabilities,
 			})
 
