@@ -18,6 +18,7 @@ alias z='zellij'
 alias ll='ls -latr'
 alias ff='fastfetch'
 alias spotify='spt'
+alias wt='wthrr -f d,w'
 
 . /opt/asdf-vm/asdf.sh
 

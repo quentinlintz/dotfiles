@@ -37,16 +37,10 @@ return {
 				filetypes = { "verilog", "systemverilog", "verilog_systemverilog" },
 				capabilities = capabilities,
 			})
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.ruby_lsp.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.eslint.setup({
+			lspconfig.asm_lsp.setup({
 				capabilities = capabilities,
 			})
 
