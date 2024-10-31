@@ -13,9 +13,10 @@ export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/.local/go
 
+alias ls='eza --grid --icons'
+alias ll='eza --icons -l'
 alias vi='nvim'
 alias z='zellij'
-alias ll='ls -latr'
 alias ff='fastfetch'
 alias spotify='spt'
 alias wt='wthrr -f d,w'
@@ -29,5 +30,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+export FPATH=$FPATH:/tools/eza/completions/zsh
 export PATH=$PATH:/home/quentin/.spicetify:$GOPATH/bin
 
