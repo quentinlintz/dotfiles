@@ -1,3 +1,5 @@
+local lspconfig = require("lspconfig")
+
 return {
   "LazyVim/LazyVim",
   opts = {
@@ -18,5 +20,51 @@ return {
       start_in_insert = true,
       close_on_exit = true,
     },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        -- Create a .solargraph.yml with `max_files: 0` in project root
+        solargraph = {
+          mason = false,
+          cmd = { os.getenv("HOME") .. "/.asdf/shims/solargraph", "stdio" }, -- Run `gem install solargraph`
+          root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
+        },
+        rubocop = {
+          mason = false,
+          cmd = { "bundle", "exec", "rubocop", "--lsp" }, -- Project's rubocop
+          root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
+        },
+      },
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters = {
+        rubocop = {
+          command = "bundle",
+          args = {
+            "exec",
+            "rubocop",
+            "--server",
+            "--autocorrect-all",
+            "--format",
+            "quiet",
+            "--stderr",
+            "--stdin",
+            "$FILENAME",
+          },
+        },
+      },
+    },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = { "RRethy/nvim-treesitter-endwise" },
+    opts = function(_, opts)
+      opts.endwise = { enable = true }
+    end,
   },
 }
