@@ -28,7 +28,7 @@ return {
         -- Create a .solargraph.yml with `max_files: 0` in project root
         solargraph = {
           mason = false,
-          cmd = { os.getenv("HOME") .. "/.asdf/shims/solargraph", "stdio" }, -- Run `gem install solargraph`
+          cmd = { os.getenv("HOME") .. "/.asdf/shims/solargraph", "stdio" }, -- Install solargraph
           root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
         },
         rubocop = {
@@ -42,6 +42,10 @@ return {
         },
         asm_lsp = {
           filestypes = { "asm", "s", "S" },
+        },
+        clangd = {
+          cmd = { os.getenv("HOME") .. "/.espressif/tools/esp-clang/16.0.1-fe4f10a809/esp-clang/bin/clangd" }, -- ESP32 clangd
+          root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git", "."),
         },
       },
     },
@@ -79,14 +83,21 @@ return {
   },
   {
     "rmagatti/auto-session",
+    init = function()
+      vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+    end,
     lazy = false,
     keys = {
       { "<leader>wr", "<cmd>SessionSearch<CR>", desc = "Session search" },
       { "<leader>ws", "<cmd>SessionSave<CR>", desc = "Save session" },
       { "<leader>wa", "<cmd>SessionToggleAutoSave<CR>", desc = "Toggle autosave" },
+      { "<leader>wd", "<cmd>SessionDelete<CR>", desc = "Delete session" },
     },
     opts = {
-      allowed_dirs = { os.getenv("HOME") .. "/.dotfiles", os.getenv("HOME") .. "/dev" },
+      cwd_change_handling = true,
+      pre_cwd_changed_cmds = { "Neotree close" },
+      post_cwd_changed_cmds = { "Neotree left" },
+      allowed_dirs = { "~/.dotfiles/*", "~/workspace/*" },
     },
   },
 }

@@ -3,6 +3,7 @@ eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDob
 plugins=(
   git
   asdf
+  archlinux
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
@@ -13,10 +14,10 @@ export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/.local/go
 
+export FPATH=$FPATH:/tools/eza/completions/zsh
 alias ls='eza --grid --icons'
 alias ll='eza --icons -l'
 alias vi='nvim'
-alias z='zellij'
 alias ff='fastfetch'
 alias spotify='spt'
 alias wt='wthrr -f d,w'
@@ -30,6 +31,4 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-export FPATH=$FPATH:/tools/eza/completions/zsh
 export PATH=$PATH:/home/quentin/.spicetify:$GOPATH/bin
-
