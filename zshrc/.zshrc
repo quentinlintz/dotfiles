@@ -19,10 +19,8 @@ alias ls='eza --grid --icons'
 alias ll='eza --icons -l'
 alias vi='nvim'
 alias ff='fastfetch'
-alias spotify='spt'
-alias wt='wthrr -f d,w'
 
-. /opt/asdf-vm/asdf.sh
+. $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
 
 # Fuzzy find things
 source <(fzf --zsh)
@@ -31,4 +29,4 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-export PATH=$PATH:$HOME/.spicetify:$GOPATH/bin:$HOME/.local/bin:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
