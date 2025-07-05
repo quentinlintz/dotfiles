@@ -1,0 +1,1 @@
+/home/quentin/.config/omarchy/current/theme/neovim.lua
