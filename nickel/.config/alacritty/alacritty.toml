@@ -1,7 +1,5 @@
 [general]
-import = [
-  "~/.config/alacritty/catppuccin.toml"
-]
+import = ["~/.config/alacritty/catppuccin.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -28,4 +26,3 @@ style = "Regular"
 [window.padding]
 x = 10
 y = 10
-
