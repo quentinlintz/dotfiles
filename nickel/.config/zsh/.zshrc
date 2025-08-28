@@ -10,6 +10,8 @@
 # Override aliases here in '$ZDOTDIR/.zshrc' (already set in .zshenv)
 
 alias n='nvim'
+alias cat='bat'
+alias man='tldr'
 
 # # Helpful aliases
 alias c='clear'                                                        # clear terminal
@@ -40,6 +42,7 @@ alias mkdir='mkdir -p'
 #  This is your file 
 # Add your configurations here
 export EDITOR=nvim
+export DISABLE_AUTO_TITLE='true'
 
 # unset -f command_not_found_handler # Uncomment to prevent searching for commands not found in package manager
 
