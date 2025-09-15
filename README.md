@@ -34,8 +34,9 @@ cd ~/workspace/dotfiles
 yay -S --needed - < nickel/pkglist.txt
 stow -t ~ nickel
 
-# For macOS (Xenon)
-stow -t ~ xenon
+# For macOS (Silver)
+brew install --force $(cat silver/pkglist.txt)
+stow -t ~ silver
 ```
 
 ## Full Machine Restoration
@@ -76,12 +77,11 @@ cd dotfiles
 yay -S --needed - < nickel/pkglist.txt
 ```
 
-**For Xenon (macOS):**
+**For Silver (macOS):**
 
 ```bash
-# If you have a Brewfile or package list for macOS
-# brew bundle install (if using Brewfile)
-# Or manually install required packages
+# Install all packages from the package list
+brew install --force $(cat silver/pkglist.txt)
 ```
 
 ### Step 3: Apply Dotfiles
@@ -93,8 +93,8 @@ yay -S --needed - < nickel/pkglist.txt
 # For Nickel (Arch Linux)
 stow -t ~ nickel
 
-# For Xenon (macOS)
-stow -t ~ xenon
+# For Silver (macOS)
+stow -t ~ silver
 
 # To see what would be linked without actually doing it:
 # stow -n -t ~ nickel  # dry run
@@ -164,10 +164,11 @@ To sync changes across machines:
 git pull
 
 # Re-apply configurations (handles new files)
-stow -R -t ~ nickel  # or xenon
+stow -R -t ~ nickel  # or silver
 
 # Install any new packages
-yay -S --needed - < nickel/pkglist.txt
+yay -S --needed - < nickel/pkglist.txt  # For Arch Linux
+brew install --force $(cat silver/pkglist.txt)  # For macOS
 ```
 
 ## Systems
@@ -189,11 +190,11 @@ yay -S --needed - < nickel/pkglist.txt
 - Neovim with extensive plugin configuration
 - Custom Zsh setup with starship prompt
 
-### Xenon
+### Silver
 
-**Hardware:** Mac Mini M4  
-**OS:** macOS Sequoia  
-**Terminal:** Ghostty  
+**Hardware:** MacBook (Main macOS Laptop)
+**OS:** macOS Sequoia
+**Terminal:** Ghostty
 **Shell:** Zsh
 
 **Key Components:**
@@ -202,6 +203,7 @@ yay -S --needed - < nickel/pkglist.txt
 - tmux configuration
 - Git configuration
 - Custom Zsh setup
+- Package management via Homebrew with pkglist.txt
 
 ## Configuration Overview
 
@@ -219,14 +221,15 @@ dotfiles/
 │   ├── .gitconfig       # Git configuration
 │   ├── .tmux.conf       # tmux configuration
 │   └── pkglist.txt      # Arch packages list
-├── xenon/               # macOS configurations
+├── silver/              # macOS configurations
 │   ├── .config/
 │   │   ├── nvim/        # Neovim for macOS
 │   │   ├── ghostty/     # Terminal config
 │   │   └── btop/        # System monitor
 │   ├── .zshrc           # Zsh for macOS
 │   ├── .gitconfig       # Git config
-│   └── .tmux.conf       # tmux config
+│   ├── .tmux.conf       # tmux config
+│   └── pkglist.txt      # Homebrew packages list
 └── README.md            # This file
 ```
 
