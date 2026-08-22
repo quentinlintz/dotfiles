@@ -1,0 +1,25 @@
+# sesh: one keystroke from anywhere to a tmux session in the right directory.
+#
+# It unions three sources -- live tmux sessions, the entries below, and zoxide's
+# frecency list -- so a project visited often shows up without being declared.
+# Declaring one here only buys a stable name and a startup command.
+#
+#   sesh connect ledger    from a shell
+#   C-b o                  from inside tmux (see config/tmux/tmux.conf)
+
+# Preview pane of the fuzzy finder. {} is the session path.
+[default_session]
+preview_command = "eza --all --git --icons=always --color=always {}"
+
+[[session]]
+name = "ledger"
+path = "~/workspace/PROJECTS/ledger"
+# Open the editor directly. C-b G then splits Claude Code in beside it; tests
+# and one-off commands go in the C-b t popup rather than a third pane.
+startup_command = "nvim"
+preview_command = "onefetch ~/workspace/PROJECTS/ledger 2>/dev/null || eza --all --icons=always --color=always {}"
+
+[[session]]
+name = "dotfiles"
+path = "~/workspace/dotfiles"
+startup_command = "nvim"

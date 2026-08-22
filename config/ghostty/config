@@ -1,0 +1,28 @@
+# TERM is intentionally unset: Ghostty defaults to xterm-ghostty, which is
+# strictly more capable than xterm-256color. If a remote host doesn't know the
+# terminfo, install it there once with:
+#   infocmp -x | ssh <host> -- tic -x -
+
+theme = Rose Pine Moon
+font-family = "MesloLGS Nerd Font Mono"
+font-size = 14
+
+# Room for the tmux status line to breathe against the top edge.
+window-padding-x = 10
+window-padding-y = 6
+window-save-state = always
+
+# Claude Code's shortcuts are Option-based (Option+Enter for a newline,
+# Option+P to switch models). macOS sends Option as a composed character by
+# default, so without this they do nothing at all.
+macos-option-as-alt = true
+
+mouse-hide-while-typing = true
+
+# tmux already asks before killing things worth keeping, and detach means a
+# closed window is never the end of a session.
+confirm-close-surface = false
+
+# A terminal that drops down over whatever is fullscreen. Global, so it works
+# from inside any other app.
+keybind = global:cmd+grave_accent=toggle_quick_terminal

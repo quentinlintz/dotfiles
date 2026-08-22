@@ -1,0 +1,8 @@
+.DS_Store
+
+# gh rewrites this on every auth change; the session lives in the macOS keychain
+config/gh/hosts.yml
+
+# Claude Code machine-local overrides
+.claude/
+apps/claude/settings.local.json

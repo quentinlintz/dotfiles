@@ -1,0 +1,14 @@
+{
+  "model": "opus",
+  "theme": "custom:rose-pine-moon",
+  "editorMode": "vim",
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "enabledPlugins": {
+    "github@claude-plugins-official": true
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  }
+}

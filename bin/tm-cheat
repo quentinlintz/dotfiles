@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#
+# Render the working-pattern cheat sheet. Bound to C-b ? in a popup.
+#
+# The repo path is not hardcoded: install.sh leaves ~/.config/tmux as a symlink
+# into this repo, so following it back two levels finds the checkout wherever it
+# lives.
+set -euo pipefail
+
+target=$(readlink "$HOME/.config/tmux" 2>/dev/null || true)
+repo=${target:+$(cd "$(dirname "$target")/.." && pwd)}
+doc="${repo:-$HOME/workspace/dotfiles}/docs/pattern.md"
+
+if [[ ! -f $doc ]]; then
+  echo "no cheat sheet at $doc" >&2
+  sleep 2
+  exit 1
+fi
+
+glow -p "$doc"

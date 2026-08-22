@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#
+# Session switcher. Bound to C-b o, and to "sessions" in the C-b Space menu.
+#
+# Unions live tmux sessions, the entries in config/sesh/sesh.toml, and zoxide's
+# frecency list. Lives here rather than inline in tmux.conf so both the binding
+# and the menu entry call one definition.
+set -euo pipefail
+
+sel=$(sesh list --icons | fzf-tmux -p 70%,60% \
+  --no-sort --ansi --reverse --border-label ' sesh ' --prompt 'session  ' \
+  --header '  ^a all  ^t tmux  ^g config  ^x zoxide  ^d kill' \
+  --bind 'tab:down,btab:up' \
+  --bind 'ctrl-a:change-prompt(session  )+reload(sesh list --icons)' \
+  --bind 'ctrl-t:change-prompt(tmux  )+reload(sesh list -t --icons)' \
+  --bind 'ctrl-g:change-prompt(config  )+reload(sesh list -c --icons)' \
+  --bind 'ctrl-x:change-prompt(zoxide  )+reload(sesh list -z --icons)' \
+  --bind 'ctrl-d:execute(tmux kill-session -t {2..})+change-prompt(session  )+reload(sesh list --icons)' \
+  --preview-window 'right:55%' --preview 'sesh preview {}') || exit 0
+
+[[ -n $sel ]] && exec sesh connect "$sel"

@@ -1,0 +1,76 @@
+# Theme: Rose Pine Moon
+#
+# base #232136  surface #2a273f  overlay #393552
+# muted #6e6a86 subtle  #908caa  text    #e0def4
+# love  #eb6f92 gold    #f6c177  rose    #ea9a97
+# pine  #3e8fb0 foam    #9ccfd8  iris    #c4a7e7
+# hl-low #2a283e  hl-med #44415a  hl-high #56526e
+
+# Main background and text
+theme[main_bg]="#232136"
+theme[main_fg]="#e0def4"
+
+# Title color for boxes
+theme[title]="#e0def4"
+
+# Higlight color for keyboard shortcuts
+theme[hi_fg]="#ea9a97"
+
+# Background/foreground for selected items in menus
+theme[selected_bg]="#44415a"
+theme[selected_fg]="#c4a7e7"
+
+# Dimmed text, e.g. unselected menu entries
+theme[inactive_fg]="#6e6a86"
+
+# Misc process box text
+theme[proc_misc]="#9ccfd8"
+
+# Box outlines — one accent per box
+theme[cpu_box]="#c4a7e7"
+theme[mem_box]="#3e8fb0"
+theme[net_box]="#ea9a97"
+theme[proc_box]="#9ccfd8"
+
+# Divider lines between boxes
+theme[div_line]="#393552"
+
+# Temperature gradient: foam -> gold -> love
+theme[temp_start]="#9ccfd8"
+theme[temp_mid]="#f6c177"
+theme[temp_end]="#eb6f92"
+
+# CPU gradient: pine -> iris -> love
+theme[cpu_start]="#3e8fb0"
+theme[cpu_mid]="#c4a7e7"
+theme[cpu_end]="#eb6f92"
+
+# Mem/disk free meter
+theme[free_start]="#56526e"
+theme[free_mid]="#6e6a86"
+theme[free_end]="#908caa"
+
+# Mem/disk cached meter
+theme[cached_start]="#3e8fb0"
+theme[cached_mid]="#6796b8"
+theme[cached_end]="#9ccfd8"
+
+# Mem/disk available meter
+theme[available_start]="#f6c177"
+theme[available_mid]="#f0b08c"
+theme[available_end]="#ea9a97"
+
+# Mem/disk used meter
+theme[used_start]="#c4a7e7"
+theme[used_mid]="#d78bbd"
+theme[used_end]="#eb6f92"
+
+# Download graph
+theme[download_start]="#3e8fb0"
+theme[download_mid]="#6cb0c4"
+theme[download_end]="#9ccfd8"
+
+# Upload graph
+theme[upload_start]="#ea9a97"
+theme[upload_mid]="#f0b08c"
+theme[upload_end]="#f6c177"

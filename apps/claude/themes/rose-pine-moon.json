@@ -1,0 +1,50 @@
+{
+  "name": "Rosé Pine Moon",
+  "base": "dark",
+  "overrides": {
+    "claude": "#c4a7e7",
+    "claudeShimmer": "#d9c4f0",
+    "text": "#e0def4",
+    "inverseText": "#232136",
+    "inactive": "#6e6a86",
+    "inactiveShimmer": "#908caa",
+    "subtle": "#393552",
+    "suggestion": "#908caa",
+    "permission": "#c4a7e7",
+    "permissionShimmer": "#d9c4f0",
+    "remember": "#ea9a97",
+
+    "success": "#3e8fb0",
+    "error": "#eb6f92",
+    "warning": "#f6c177",
+    "warningShimmer": "#f9d9a7",
+    "merged": "#c4a7e7",
+
+    "promptBorder": "#393552",
+    "promptBorderShimmer": "#56526e",
+    "planMode": "#9ccfd8",
+    "autoAccept": "#3e8fb0",
+    "bashBorder": "#ea9a97",
+    "ide": "#9ccfd8",
+    "fastMode": "#f6c177",
+    "fastModeShimmer": "#f9d9a7",
+
+    "diffAdded": "#1f3d3a",
+    "diffRemoved": "#3d2230",
+    "diffAddedDimmed": "#2a2f38",
+    "diffRemovedDimmed": "#332a35",
+    "diffAddedWord": "#2e5c56",
+    "diffRemovedWord": "#5c2e42",
+
+    "userMessageBackground": "#2a273f",
+    "userMessageBackgroundHover": "#393552",
+    "bashMessageBackgroundColor": "#2a273f",
+    "memoryBackgroundColor": "#2a273f",
+    "selectionBg": "#44415a",
+
+    "rate_limit_fill": "#c4a7e7",
+    "rate_limit_empty": "#393552",
+    "briefLabelYou": "#908caa",
+    "briefLabelClaude": "#c4a7e7"
+  }
+}

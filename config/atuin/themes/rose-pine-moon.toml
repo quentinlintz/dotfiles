@@ -1,0 +1,14 @@
+# Rosé Pine Moon for atuin. Dropped in config/atuin/themes/ and selected by
+# name from config.toml. Atuin keys colors by semantic role, not by UI element.
+[theme]
+name = "rose-pine-moon"
+
+[colors]
+AlertInfo = "#9ccfd8"
+AlertWarn = "#f6c177"
+AlertError = "#eb6f92"
+Annotation = "#c4a7e7"
+Base = "#e0def4"
+Guidance = "#6e6a86"
+Important = "#ea9a97"
+Title = "#c4a7e7"

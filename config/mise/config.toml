@@ -1,0 +1,25 @@
+[tools]
+go = "latest"
+lua = "latest"
+node = "26"
+python = "latest"
+ruby = "latest"
+rust = "latest"
+
+# Go tooling. Declared here rather than left to a one-off `go install`, so a
+# second machine gets the same versions from `mise install`.
+#
+#   gopls           language server
+#   dlv             debugger, via nvim-dap-go and directly
+#   gotestsum       readable test output, see the Makefile's test-v
+#
+# No goimports or gofumpt here on purpose. Both the editor and `make fmt` reach
+# them through `golangci-lint`, which embeds them and reads .golangci.yml, so a
+# standalone copy would only be a second implementation to drift from.
+# golangci-lint itself is pinned per-repo, not here, to match that repo's CI.
+#
+# mason.nvim is told to leave all of these alone (config/nvim/lua/plugins/go.lua)
+# so there is exactly one copy of each and it is the one CI uses.
+"go:golang.org/x/tools/gopls" = "latest"
+"go:github.com/go-delve/delve/cmd/dlv" = "latest"
+gotestsum = "latest"

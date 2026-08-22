@@ -1,0 +1,9 @@
+# Custom themes live in ./themes and are compiled with `bat cache --build`
+# (install.sh does this). The compiled cache is machine-local, not tracked.
+# NB: bat keys custom themes by FILENAME, not the <name> in the tmTheme
+--theme="rose-pine-moon"
+
+--style="numbers,changes,header"
+
+# bat is aliased to `cat`, so don't page short files
+--paging=auto

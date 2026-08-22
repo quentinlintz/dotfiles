@@ -1,0 +1,134 @@
+// Rose Pine Moon, macOS
+// Rewritten from a ported Linux config: the old one pointed at a missing
+// xero.png logo, used GNU `stat -c %W` (silently killing the OS Age box on
+// BSD stat), and rendered empty de/lm/wmtheme rows.
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "padding": {
+      "top": 2,
+      "left": 2,
+      "right": 3,
+    },
+    // Recolor the Apple logo to the Rose Pine Moon palette
+    "color": {
+      "1": "38;2;196;167;231", // iris
+      "2": "38;2;156;207;216", // foam
+      "3": "38;2;62;143;176", // pine
+      "4": "38;2;234;154;151", // rose
+      "5": "38;2;246;193;119", // gold
+      "6": "38;2;235;111;146", // love
+    },
+  },
+  "display": {
+    "separator": " ",
+    "color": {
+      "separator": "38;2;110;106;134", // muted
+    },
+  },
+  "modules": [
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;110;106;134m┌──────────────────────Hardware──────────────────────┐",
+    },
+    {
+      "type": "host",
+      "key": " Mac",
+      "keyColor": "38;2;196;167;231",
+    },
+    {
+      "type": "cpu",
+      "key": "│ ├",
+      "showPeCoreCount": true,
+      "keyColor": "38;2;196;167;231",
+    },
+    {
+      "type": "gpu",
+      "key": "│ ├󰍛",
+      "keyColor": "38;2;196;167;231",
+    },
+    {
+      "type": "memory",
+      "key": "│ ├",
+      "keyColor": "38;2;196;167;231",
+    },
+    {
+      "type": "disk",
+      "key": "│ ├",
+      "folders": "/",
+      "keyColor": "38;2;196;167;231",
+    },
+    {
+      "type": "battery",
+      "key": "└ └",
+      "keyColor": "38;2;196;167;231",
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;110;106;134m└────────────────────────────────────────────────────┘",
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;110;106;134m┌──────────────────────Software──────────────────────┐",
+    },
+    {
+      "type": "os",
+      "key": " OS",
+      "keyColor": "38;2;156;207;216",
+    },
+    {
+      "type": "kernel",
+      "key": "│ ├",
+      "keyColor": "38;2;156;207;216",
+    },
+    {
+      "type": "packages",
+      "key": "│ ├󰏖",
+      "keyColor": "38;2;156;207;216",
+    },
+    {
+      "type": "shell",
+      "key": "│ ├",
+      "keyColor": "38;2;156;207;216",
+    },
+    {
+      "type": "terminal",
+      "key": "└ └",
+      "keyColor": "38;2;156;207;216",
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;110;106;134m└────────────────────────────────────────────────────┘",
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;110;106;134m┌────────────────────Uptime / Age────────────────────┐",
+    },
+    {
+      "type": "command",
+      "key": " OS Age",
+      "keyColor": "38;2;246;193;119",
+      // BSD stat: %B is the inode birth time. GNU's `stat -c %W` is not portable here.
+      "text": "birth=$(stat -f %B /); now=$(date +%s); echo $(( (now - birth) / 86400 )) days",
+    },
+    {
+      "type": "uptime",
+      "key": " Uptime",
+      "keyColor": "38;2;246;193;119",
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;110;106;134m└────────────────────────────────────────────────────┘",
+    },
+    "break",
+    {
+      "type": "colors",
+      "paddingLeft": 2,
+      "symbol": "circle",
+    },
+    "break",
+  ],
+}

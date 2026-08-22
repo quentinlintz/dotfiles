@@ -1,0 +1,95 @@
+palette = "rose_pine_moon"
+
+[palettes.rose_pine_moon]
+base = "#232136"
+surface = "#2a273f"
+overlay = "#393552"
+muted = "#6e6a86"
+subtle = "#908caa"
+text = "#e0def4"
+love = "#eb6f92"
+gold = "#f6c177"
+rose = "#ea9a97"
+pine = "#3e8fb0"
+foam = "#9ccfd8"
+iris = "#c4a7e7"
+hl_low = "#2a283e"
+hl_med = "#44415a"
+hl_high = "#56526e"
+
+format = """
+[░▒▓](subtle)\
+[  ](bg:subtle fg:base)\
+[](fg:subtle bg:iris)\
+$directory\
+[](fg:iris bg:overlay)\
+$git_branch\
+$git_status\
+[](fg:overlay bg:surface)\
+$nodejs\
+$python\
+$ruby\
+$rust\
+$golang\
+[](fg:surface bg:hl_low)\
+$time\
+[ ](fg:hl_low)\
+\n$character"""
+
+[directory]
+style = "fg:base bg:iris"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"workspace" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:overlay"
+format = '[[ $symbol $branch ](fg:foam bg:overlay)]($style)'
+
+[git_status]
+style = "bg:overlay"
+format = '[[($all_status$ahead_behind )](fg:rose bg:overlay)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:surface"
+format = '[[ $symbol ($version) ](fg:foam bg:surface)]($style)'
+
+[python]
+symbol = ""
+style = "bg:surface"
+format = '[[ $symbol ($version) ](fg:gold bg:surface)]($style)'
+
+[ruby]
+symbol = ""
+style = "bg:surface"
+format = '[[ $symbol ($version) ](fg:love bg:surface)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:surface"
+format = '[[ $symbol ($version) ](fg:rose bg:surface)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:surface"
+format = '[[ $symbol ($version) ](fg:pine bg:surface)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:hl_low"
+format = '[[  $time ](fg:subtle bg:hl_low)]($style)'
+
+[character]
+success_symbol = "[❯](bold foam)"
+error_symbol = "[❯](bold love)"
+vicmd_symbol = "[❮](bold iris)"

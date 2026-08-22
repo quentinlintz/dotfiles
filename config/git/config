@@ -1,0 +1,67 @@
+[user]
+	name = Quentin Lintz
+	email = quentinlintz@outlook.com
+
+[init]
+	defaultBranch = main
+
+# Always talk to GitHub over SSH, even when a remote is written as https://
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+# Resolve gh via PATH: hardcoding a prefix breaks between Linux and macOS
+[credential "https://github.com"]
+	helper =
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !gh auth git-credential
+
+# These earn their place in the worktree-per-agent flow. autoSetupRemote is the
+# load-bearing one: without it the first push from a `claude --worktree` branch
+# stops to ask for --set-upstream, every time.
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[rerere]
+	enabled = true
+[branch]
+	sort = -committerdate
+[commit]
+	verbose = true
+
+# Delta renders every diff git prints. It reads bat's theme registry, so the
+# vendored rose-pine-moon.tmTheme in config/bat/themes drives the syntax colors
+# here too: retheming bat rethemes this.
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+	syntax-theme = rose-pine-moon
+	file-style = "#c4a7e7"
+	hunk-header-style = "#6e6a86"
+[merge]
+	conflictstyle = zdiff3
+
+# Difftastic diffs the syntax tree instead of the lines, so a reformat shows as
+# no change. Too slow to be the default pager, exactly right as a second
+# opinion on an agent's diff that mixes real edits with formatting churn.
+[diff]
+	algorithm = histogram
+	colorMoved = default
+	tool = difftastic
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
+
+[alias]
+	dt = difftool

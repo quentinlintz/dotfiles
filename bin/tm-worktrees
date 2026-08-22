@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#
+# Jump between the worktrees of the current repo. Bound to C-b A in a popup.
+#
+# One agent, one worktree, one window: each worktree gets a tmux window named
+# after it, reused if it is already open rather than opening a second one.
+set -euo pipefail
+
+if ! git rev-parse --git-dir >/dev/null 2>&1; then
+  echo "not inside a git repository" >&2
+  sleep 2
+  exit 1
+fi
+
+sel=$(git worktree list | fzf \
+        --reverse --ansi --border-label ' worktrees ' --prompt 'worktree  ' \
+        --preview 'git -C {1} log --oneline --color=always -20' \
+        --preview-window 'right:55%') || exit 0
+
+dir=${sel%% *}
+name=$(basename "$dir")
+
+if tmux list-windows -F '#W' | grep -qxF "$name"; then
+  tmux select-window -t "$name"
+else
+  tmux new-window -n "$name" -c "$dir"
+fi

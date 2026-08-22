@@ -1,0 +1,82 @@
+# Rosé Pine Moon for yazi.
+#
+# base #232136  surface #2a273f  overlay #393552  muted #6e6a86
+# subtle #908caa  text #e0def4  love #eb6f92  gold #f6c177
+# rose #ea9a97  pine #3e8fb0  foam #9ccfd8  iris #c4a7e7
+
+[mgr]
+cwd = { fg = "#9ccfd8" }
+
+hovered         = { fg = "#232136", bg = "#c4a7e7" }
+preview_hovered = { fg = "#232136", bg = "#c4a7e7" }
+
+find_keyword  = { fg = "#f6c177", bold = true }
+find_position = { fg = "#ea9a97", bold = true }
+
+marker_copied   = { fg = "#f6c177", bg = "#f6c177" }
+marker_cut      = { fg = "#eb6f92", bg = "#eb6f92" }
+marker_marked   = { fg = "#9ccfd8", bg = "#9ccfd8" }
+marker_selected = { fg = "#c4a7e7", bg = "#c4a7e7" }
+
+count_copied   = { fg = "#232136", bg = "#f6c177" }
+count_cut      = { fg = "#232136", bg = "#eb6f92" }
+count_selected = { fg = "#232136", bg = "#c4a7e7" }
+
+border_symbol = "│"
+border_style  = { fg = "#393552" }
+
+[mode]
+normal_main = { fg = "#232136", bg = "#c4a7e7", bold = true }
+normal_alt  = { fg = "#c4a7e7", bg = "#2a273f" }
+select_main = { fg = "#232136", bg = "#3e8fb0", bold = true }
+select_alt  = { fg = "#3e8fb0", bg = "#2a273f" }
+unset_main  = { fg = "#232136", bg = "#ea9a97", bold = true }
+unset_alt   = { fg = "#ea9a97", bg = "#2a273f" }
+
+[status]
+progress_label  = { fg = "#e0def4", bold = true }
+progress_normal = { fg = "#c4a7e7", bg = "#2a273f" }
+progress_error  = { fg = "#eb6f92", bg = "#2a273f" }
+
+[input]
+border   = { fg = "#c4a7e7" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+[pick]
+border   = { fg = "#c4a7e7" }
+active   = { fg = "#ea9a97", bold = true }
+inactive = {}
+
+[confirm]
+border     = { fg = "#c4a7e7" }
+title      = { fg = "#c4a7e7" }
+content    = {}
+list       = {}
+btn_yes    = { reversed = true }
+btn_no     = {}
+
+[notify]
+title_info  = { fg = "#9ccfd8" }
+title_warn  = { fg = "#f6c177" }
+title_error = { fg = "#eb6f92" }
+
+[tasks]
+border  = { fg = "#c4a7e7" }
+title   = {}
+hovered = { fg = "#ea9a97", underline = true }
+
+[which]
+mask            = { bg = "#2a273f" }
+cand            = { fg = "#9ccfd8" }
+rest            = { fg = "#6e6a86" }
+desc            = { fg = "#ea9a97" }
+separator       = "  "
+separator_style = { fg = "#393552" }
+
+[help]
+on      = { fg = "#9ccfd8" }
+run     = { fg = "#ea9a97" }
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#2a273f", bg = "#e0def4" }

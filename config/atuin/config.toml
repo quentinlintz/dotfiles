@@ -1,0 +1,26 @@
+# Atuin replaces Ctrl-R with a searchable history database.
+#
+# Local only: no account, no sync, nothing leaves the machine. The daemon and
+# the sync block are deliberately absent rather than disabled: an option that
+# isn't there can't be turned on by an upgrade.
+
+## Scope searches to the current directory first. This is the whole reason to
+## run atuin: `git reb<Ctrl-R>` in one repo should not surface the rebases you
+## ran in another.
+filter_mode_shell_up_key_binding = "directory"
+
+## Full-screen list rather than a compact inline one. Inside a tmux pane the
+## inline mode fights the pane height.
+style = "full"
+inline_height = 0
+
+show_preview = true
+enter_accept = false          # Enter edits the command, Tab runs it
+update_check = false
+
+[stats]
+common_subcommands = ["cargo", "go", "git", "npm", "brew", "mise", "tmux"]
+
+# Rosé Pine Moon. Atuin's theme system keys colors by semantic role.
+[theme]
+name = "rose-pine-moon"
